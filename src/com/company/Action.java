@@ -46,7 +46,7 @@ public class Action {
                                         System.out.println(defender.name + " defended!    Defense Strength: " + strongestDefense);
                                         attackWinner = defender;
                                     } else if (strongestDefense == strongestAttack){
-                                        System.out.println("Equal Strength");
+                                        System.out.println("Equal Strength   " + defender.name + "'s Defense Strength: " + strongestDefense);
                                         attackWinner = playerList.get((int) (Math.random() * playerList.size()));
                                     } else if (strongestDefense < strongestAttack){
                                         System.out.println(defender.name + "'s defense was too weak!    Defense Strength: " + strongestDefense);
@@ -76,10 +76,11 @@ public class Action {
         if (activePlayer.mana >= 6 && activePlayer.mana < 13)
             System.out.println("Choose Monster Strength 3-" + (activePlayer.mana - 3));
         int input1 = scan.nextInt();
+        scan.nextLine();
         if(input1 <= (activePlayer.mana - 3) && input1 <= 10 && input1 >= 3){
             activePlayer.monsterDen.add(new Monster(input1));
             activePlayer.mana -= (input1 + 3);
-            System.out.println("Monster added to " + activePlayer.name + "'s Den");
+            System.out.println("Monster added to " + activePlayer.name + "'s Den\n");
             isTurnOver = true;
         }
         return isTurnOver;
