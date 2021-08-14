@@ -18,10 +18,18 @@ public class Action {
         for (Player player1 : playerList) {
             if (player1 != activePlayer) {
                 if (player1.monsterDen.size() == 0) {
-                    player1.health--;
-                    System.out.println(activePlayer.name + " hit " + player1.name + " directly!");
-                    activePlayer.hasAttacked = true;
-                    break;
+                    int randNum = (int) ((Math.random() * 3) + 1);
+                    if (randNum == 1){
+                        System.out.println(player1.name + " dodged " + activePlayer.name + "'s monsters attack!");
+                        activePlayer.hasAttacked = true;
+                        break;
+                    } else if (randNum != 1){
+                        player1.health--;
+                        System.out.println(activePlayer.name + " hit " + player1.name + " directly!");
+                        activePlayer.hasAttacked = true;
+                        break;
+                    }
+
                 } else {
                     int strongestAttack = 0;
                     int strongestDefense = 0;

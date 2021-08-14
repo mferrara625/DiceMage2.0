@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
     String name;
     int health = 5;
-    int mana = 5;
+    int mana = 10;
     int power = 6;
     int numTimesPoweredUp = 0;
     boolean hasAttacked;
