@@ -16,7 +16,7 @@ public class Action {
         for (Player player1 : playerList) {
             if (player1 != activePlayer) {
                 if (player1.monsterDen.size() == 0) {
-                    int randNum = (int) ((Math.random() * 3) + 1);
+                    int randNum = (int) ((Math.random() * player1.actualLuckAmount) + 1);
                     if (randNum == 1){
                         System.out.println(player1.name + " dodged " + activePlayer.name + "'s monsters attack!");
                         activePlayer.hasAttacked = true;
@@ -98,5 +98,23 @@ public class Action {
             activePlayer.manaDice.add(new Die());
             System.out.println(activePlayer.name + " Powered Up!");
         }
+    }
+
+    public static void heal(Player activePlayer) {
+        if(activePlayer.manaDice.size() > 0){
+            int healAmt = (int) ((Math.random() * 3) + 1);
+            activePlayer.health += healAmt;
+            activePlayer.manaDice.remove((activePlayer.manaDice.size() - 1));
+            System.out.println(activePlayer.name + " healed for " + healAmt + " HP");
+        } else {
+            System.out.println(activePlayer.name + " has no mana dice remaining");
+        }
+    }
+
+    public static void increaseLuck(Player activePlayer) {
+        activePlayer.mana -= (activePlayer.luckDisplayed + 1);
+        activePlayer.luckDisplayed++;
+        activePlayer.actualLuckAmount--;
+        System.out.println(activePlayer.name + " has increased their luck and will now have a better chance of dodging attacks!");
     }
 }

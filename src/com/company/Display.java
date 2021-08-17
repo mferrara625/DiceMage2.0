@@ -60,13 +60,15 @@ public class Display {
         System.out.println("1. End Turn");
         System.out.println("2. View Field");
         if (activePlayer.mana >= (4 + activePlayer.numTimesPoweredUp))
-            System.out.println("3. Power Up  cost (" + (4 + activePlayer.numTimesPoweredUp) + ")");
+            System.out.println("3. Power Up  (cost " + (4 + activePlayer.numTimesPoweredUp) + " mana)");
         if (activePlayer.mana >= 6)
             System.out.println("4. Summon Monster (and end turn)");
         if(activePlayer.monsterDen.size() > 0 && !activePlayer.hasAttacked)
             System.out.println("5. Attack!");
         if(activePlayer.health < 3)
             System.out.println("6. Heal (cost 1 mana die)");
+        if(activePlayer.mana > (activePlayer.luckDisplayed + 1) && activePlayer.luckDisplayed < 7)
+            System.out.println("7. Increase Luck (cost " + (activePlayer.luckDisplayed + 1) + " mana)" );
     }
 
 }

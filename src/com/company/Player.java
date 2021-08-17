@@ -8,6 +8,8 @@ public class Player {
     int health = 5;
     int mana = 10;
     int power = 6;
+    int luckDisplayed = 0;
+    int actualLuckAmount = 10;
     int numTimesPoweredUp = 0;
     boolean hasAttacked;
     List<Die> manaDice = new ArrayList<>();
@@ -18,7 +20,7 @@ public class Player {
     }
 
     public String toString(){
-        return "Wizard " + name + "\tHealth: " + health + " Mana: " + mana + " Power: " + power +
+        return "Wizard " + name + "\tHealth: " + health + " Mana: " + mana + " Power: " + power + " Luck: " + luckDisplayed +
                 "\nMonsters: " + monsterDen.size() + "\n##########################################";
     }
 }
