@@ -44,7 +44,7 @@ public class Game {
                 else if (input.equals("5") && !activePlayer.hasAttacked && activePlayer.monsterDen.size() > 0) {
                     gamePlay.combat(playerList, activePlayer);
                 }
-                else if (input.equals("6") && activePlayer.health < 3) {
+                else if (input.equals("6") && activePlayer.health < 3 && activePlayer.manaDice.size() > 0) {
                     gamePlay.heal(activePlayer);
                 }
                 else if (input.equals("7") && activePlayer.mana > (activePlayer.luckDisplayed + 1) && activePlayer.actualLuckAmount > 3){

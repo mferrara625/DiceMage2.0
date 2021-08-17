@@ -8,10 +8,6 @@ public class Die {
         numberOfSides = 6;
     }
 
-    public Die(int numberOfSides) {
-        this.numberOfSides = numberOfSides;
-    }
-
     public void roll() {
         faceUpValue = (int) ((Math.random() * numberOfSides) + 1);
     }

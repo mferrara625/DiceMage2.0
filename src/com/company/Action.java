@@ -101,14 +101,10 @@ public class Action {
     }
 
     public static void heal(Player activePlayer) {
-        if(activePlayer.manaDice.size() > 0){
             int healAmt = (int) ((Math.random() * 3) + 1);
             activePlayer.health += healAmt;
             activePlayer.manaDice.remove((activePlayer.manaDice.size() - 1));
             System.out.println(activePlayer.name + " healed for " + healAmt + " HP");
-        } else {
-            System.out.println(activePlayer.name + " has no mana dice remaining");
-        }
     }
 
     public static void increaseLuck(Player activePlayer) {

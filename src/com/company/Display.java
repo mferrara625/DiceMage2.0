@@ -65,7 +65,7 @@ public class Display {
             System.out.println("4. Summon Monster (and end turn)");
         if(activePlayer.monsterDen.size() > 0 && !activePlayer.hasAttacked)
             System.out.println("5. Attack!");
-        if(activePlayer.health < 3)
+        if(activePlayer.health < 3 && activePlayer.manaDice.size() > 0)
             System.out.println("6. Heal (cost 1 mana die)");
         if(activePlayer.mana > (activePlayer.luckDisplayed + 1) && activePlayer.luckDisplayed < 7)
             System.out.println("7. Increase Luck (cost " + (activePlayer.luckDisplayed + 1) + " mana)" );
