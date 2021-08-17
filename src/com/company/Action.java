@@ -12,8 +12,6 @@ public class Action {
         playerList.add(new Player(playerName));
     }
 
-
-
     public static void combat(List<Player> playerList, Player activePlayer) {
         for (Player player1 : playerList) {
             if (player1 != activePlayer) {
@@ -40,7 +38,6 @@ public class Action {
                             if (monster.faceUpValue > strongestAttack) {
                                 strongestAttack = monster.faceUpValue;
                             }
-
                         }
                         for (Player defender : playerList){
                             if(defender != activePlayer){
@@ -49,7 +46,6 @@ public class Action {
                                     if (monster.faceUpValue > strongestDefense) {
                                         strongestDefense = monster.faceUpValue;
                                     }
-
                                     if(strongestDefense > strongestAttack){
                                         System.out.println(defender.name + " defended!    Defense Strength: " + strongestDefense);
                                         attackWinner = defender;

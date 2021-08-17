@@ -33,6 +33,7 @@ public class Display {
         display.calcMana(activePlayer, dieHolder);
 
     }
+
     public void calcMana(Player activePlayer, Integer[] dieHolder) {
 
         int manaPulled = 1;
@@ -46,6 +47,7 @@ public class Display {
     }
 
     public static void showField(List<Player> playerList) {
+        System.out.println("\n##########################################");
         for (Player player1 : playerList)
             System.out.println(player1);
     }
@@ -63,6 +65,8 @@ public class Display {
             System.out.println("4. Summon Monster (and end turn)");
         if(activePlayer.monsterDen.size() > 0 && !activePlayer.hasAttacked)
             System.out.println("5. Attack!");
+        if(activePlayer.health < 3)
+            System.out.println("6. Heal (cost 1 mana die)");
     }
 
 }

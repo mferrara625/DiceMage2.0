@@ -16,5 +16,4 @@ public class Die {
         faceUpValue = (int) ((Math.random() * numberOfSides) + 1);
     }
 
-
 }

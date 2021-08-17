@@ -12,7 +12,15 @@ public class Game {
             activePlayer = player;
             activePlayer.hasAttacked = false;
             if(activePlayer.health <= 0){
-                System.out.println(activePlayer.name + " Was DEFEATED!!!");
+                System.out.println("\n" + activePlayer.name + " Was DEFEATED!!!\n");
+                System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                for (Player winner : playerList){
+                    if(winner != activePlayer){
+                        System.out.println("\t" + winner.name + " is the SUPERIOR WIZARD!!!");
+                        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+                    }
+                }
                 isGameActive = false;
                 break;
             }
@@ -35,6 +43,16 @@ public class Game {
                 }
                 else if (input.equals("5") && !activePlayer.hasAttacked && activePlayer.monsterDen.size() > 0) {
                     gamePlay.combat(playerList, activePlayer);
+                }
+                else if (input.equals("6") && activePlayer.health < 3) {
+                    if(activePlayer.manaDice.size() > 0){
+                        int healAmt = (int) ((Math.random() * 3) + 1);
+                        activePlayer.health += healAmt;
+                        activePlayer.manaDice.remove((activePlayer.manaDice.size() - 1));
+                        System.out.println(activePlayer.name + " healed for " + healAmt + " HP");
+                    } else {
+                        System.out.println(activePlayer.name + " has no mana dice remaining");
+                    }
                 }
             }
         }
